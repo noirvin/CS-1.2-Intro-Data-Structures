@@ -14,22 +14,17 @@ def generate_random_word(source_text):
 
     histogram_sample = histogram(source_text)
 
-    weight_sum = 0
+
     count = 0
 
-    while count < len(histogram_sample):
 
-        weight_sum += ((histogram_sample[count][1])/total_weight(histogram_sample))*100
-        count+=1
-
-    random_num = random.randint(0,int(weight_sum))
+    random_num = random.randint(0,int(total_weight(histogram_sample)))
 
     for element in histogram_sample:
 
-        random_num = weight_sum - random_num
+        random_num = random_num-element[1]
 
         if random_num <= 0:
-            print("Hello")
             generated_word = element[0]
             return generated_word
             break
