@@ -8,7 +8,8 @@ def histogram(source_text):
     word_list = og_text.split()
 
     for index, word in enumerate(word_list):
-            word_list[index] = word.strip("&#@+?/[]{}!:;*_-.,()<>'")
+            word_list[index] = word.rstrip("&#@+?/[]{}!:;*_-.,()<>'")
+
 
     histogram = []
     for word in word_list:
