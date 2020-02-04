@@ -16,7 +16,7 @@ def histogram(source_text):
         if histogram == []:
             histogram.append([word, 1])
         else:
-            for curr_hist_pos in range(0, len(histogram) + 1):
+            for curr_hist_pos in range(0, len(histogram)+1):
                 try:
                     if word == histogram[curr_hist_pos][0]:
                         histogram[curr_hist_pos][1] += 1
